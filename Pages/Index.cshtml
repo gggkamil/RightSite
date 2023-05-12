@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kancelaria</title>
     <link rel="stylesheet" href="./style.js">
+
 </head>
 
 <body>
@@ -42,7 +45,9 @@
                 </p>
 
             </div>
-    
+            <dif>
+                <img src="~/images/pen.jpg" width="600" height="300" />
+            </dif>
            
         </div>
         
@@ -53,7 +58,7 @@
             <h1>Types of services</h1>
             <div class="service-box service-box1">
                 <h2>Porada</h2>
-                <a href="#" class="btn btn-primary" target="_blank">Learn more</a>
+                <a href="#" class="btn btn-primary" target="">Learn more</a>
             </div>
             <div class="service-box service-box2">
                 <h2>Umowa</h2>
@@ -119,12 +124,25 @@
         <div class="contact-container container">
 
             <div class="contact-form">
-                <form>
-                    <h2>Contact Us</h2>
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Email">
-                    <textarea cols="30" rows="10" placeholder="Type your message here"></textarea>
-                    <a href="#" class="btn btn-primary">Submit</a>
+                <form method="post" action="ProcessRequest.cshtml">
+                    <div>
+                        Your name:
+                        <input type="text" name="customerName" />
+                    </div>
+
+                    <div>
+                        Your email address:
+                        <input type="text" name="customerEmail" />
+                    </div>
+
+                    <div>
+                        Details about your problem: <br />
+                        <textarea name="customerRequest" cols="45" rows="4"></textarea>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Submit" />
+                    </div>
                 </form>
             </div>
         </div>
